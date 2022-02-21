@@ -102,7 +102,7 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
 
         slidesField.style.transform = `translateX(-${offset}px)`
 
-        if (slideIndex == slides.length) {
+        if (slideIndex === slides.length) {
             slideIndex = 1;
         } else {
             slideIndex++
@@ -121,7 +121,7 @@ function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentC
 
         slidesField.style.transform = `translateX(-${offset}px)`
 
-        if (slideIndex == 1) {
+        if (slideIndex === 1) {
             slideIndex = slides.length;
         } else {
             slideIndex--

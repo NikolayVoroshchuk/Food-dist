@@ -59,7 +59,7 @@ function calc() {
         elements.forEach(elem => {
             elem.addEventListener('click', (e) => {
                 if (e.target.getAttribute('data-ratio')) {
-                    ratio = +e.target.getAttribute('data-ratio')
+                    ratio = Number(e.target.getAttribute('data-ratio'))
                     localStorage.setItem('ratio', ratio)
                 } else {
                     sex = e.target.getAttribute('id')
@@ -91,16 +91,15 @@ function calc() {
                 input.style.border = 'none'
             }
 
-
             switch (input.getAttribute('id')) {
                 case 'height':
-                    height = +input.value;
+                    height = Number(input.value);
                     break;
                 case 'weight':
-                    weight = +input.value;
+                    weight = Number(input.value);
                     break;
                 case 'age':
-                    age = +input.value;
+                    age = Number(input.value);
                     break;
             }
             calcTotal()

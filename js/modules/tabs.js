@@ -4,9 +4,9 @@ function tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass
     const tabsParent = document.querySelector(tabsParentSelector);
 
     function hideTabContent() {
-        tabsContent.forEach(item => {
-            item.classList.add('hide');
-            item.classList.remove('show', 'fade');
+        tabsContent.forEach(({ classList }) => {
+            classList.add('hide');
+            classList.remove('show', 'fade');
         });
 
         tabs.forEach(item => {
@@ -23,12 +23,11 @@ function tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass
     hideTabContent();
     showTabContent();
 
-    tabsParent.addEventListener('click', (event) => {
-        const target = event.target;
+    tabsParent.addEventListener('click', ({ target }) => {
 
         if (target && target.classList.contains(tabsSelector.slice(1))) {
             tabs.forEach((item, i) => {
-                if (target == item) {
+                if (target === item) {
                     hideTabContent();
                     showTabContent(i);
                 };
